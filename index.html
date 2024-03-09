@@ -14,6 +14,37 @@
 	<noscript>
 		<link rel="stylesheet" href="assets/css/noscript.css" />
 	</noscript>
+	<script>
+		// Set the date we're counting down to
+		var countDownDate = new Date("Jan 5, 2030 15:37:25").getTime();
+
+		// Update the count down every 1 second
+		var x = setInterval(function () {
+
+			// Get today's date and time
+			var now = new Date().getTime();
+
+			// Find the distance between now and the count down date
+			var distance = countDownDate - now;
+
+			// Time calculations for days, hours, minutes and seconds
+			var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+			var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+			var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+			var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+			// Display the result in the element with id="demo"
+			document.getElementById("days").innerHTML = days;
+			document.getElementById("hours").innerHTML = hours;
+			document.getElementById("minutes").innerHTML = minutes;
+			document.getElementById("seconds").innerHTML = seconds;
+			// If the count down is finished, write some text
+			if (distance < 0) {
+				clearInterval(x);
+				document.getElementById("demo").innerHTML = "EXPIRED";
+			}
+		}, 1000);
+	</script>
 </head>
 
 <body class="is-preload">
@@ -24,32 +55,15 @@
 
 			<!-- Header -->
 			<header id="header">
-				<h1>Adam Jensen</h1>
-				<p>Security Chief &nbsp;&bull;&nbsp; Cyborg &nbsp;&bull;&nbsp; Never asked for this</p>
+				<h1>Ravi Weds </h1>
+				<!-- <p>Security Chief &nbsp;&bull;&nbsp; Cyborg &nbsp;&bull;&nbsp; Never asked for this</p> -->
 				<nav>
 					<ul>
-						<script>
-							var countDownDate = new Date("Jan 5, 2030 15:37:25").getTime();
-							// Update the count down every 1 second
-							var x = setInterval(function () {
-
-								// Get today's date and time
-								var now = new Date().getTime();
-
-								// Find the distance between now and the count down date
-								var distance = countDownDate - now;
-
-								// Time calculations for days, hours, minutes and seconds
-								var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-								var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-								var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-								var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-								document.getElementById("demo").innerHTML =
-									"<li><span class=label>"days"</span></li>"
-								"<li><span class=label>"hours"</span></li>"
-								"<li><span class=label>"minutes"</span></li>";
-							}, 1000);
-						</script>
+						<li><a href="#" class="icon brands fa-twitter" id="days"><span class="label">Twitter</span></a></li>
+						<li><a href="#" class="icon brands fa-facebook-f" id="hours"><span class="label">Facebook</span></a></li>
+						<li><a href="#" class="icon brands fa-dribbble" id="minutes"><span class="label">Dribbble</span></a></li>
+						<li><a href="#" class="icon brands fa-github" id="Seconds"><span class="label">Github</span></a></li>
+						<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
 					</ul>
 				</nav>
 			</header>
